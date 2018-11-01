@@ -8,11 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.gruenerfelix.bakingapp.bakingapp.R;
 import com.gruenerfelix.bakingapp.bakingapp.RecipeDetailActivity;
-import com.gruenerfelix.bakingapp.bakingapp.model.BakingProcess;
+import com.gruenerfelix.bakingapp.bakingapp.model.Recipe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +20,9 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
 
     //Refererence to MainActivity
     private Context mContext;
-    private List<BakingProcess> recipeList = new ArrayList<>();
+    private List<Recipe> recipeList = new ArrayList<>();
 
-    public RecipeAdapter(Context mContext, List<BakingProcess> recipeList) {
+    public RecipeAdapter(Context mContext, List<Recipe> recipeList) {
         this.recipeList = recipeList;
         this.mContext = mContext;
     }
@@ -37,21 +36,20 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
         return new MyViewHolder(view);
     }
 
-
     //Binds Data to that Card
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        BakingProcess recipe = recipeList.get(position);
+        Recipe recipe = recipeList.get(position);
         holder.title.setText(recipe.getName());
 
     }
-
 
     @Override
     public int getItemCount(){
         return recipeList.size();
 
     }
+
     //inner class of RecyclerView. Adapter
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView title;
@@ -68,13 +66,13 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
                 public void onClick(View v){
                     int pos = getAdapterPosition();
                     if (pos != RecyclerView.NO_POSITION){
-                        BakingProcess clickedDataItem = recipeList.get(pos);
+                        Recipe clickedDataItem = recipeList.get(pos);
 
                         Intent intent = new Intent(mContext, RecipeDetailActivity.class);
                         intent.putExtra("Recipe", clickedDataItem);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         mContext.startActivity(intent);
-                        Toast.makeText(v.getContext(), "You clicked " + clickedDataItem.getName(), Toast.LENGTH_SHORT).show();
+
                     }
                 }
             });

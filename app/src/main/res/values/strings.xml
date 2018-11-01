@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BakingApp</string>
+    <string name="empty_widget_list" >No Ingredient Information Available</string>
+    <string name="ingredients_title_text"> Ingredients</string>
 </resources>

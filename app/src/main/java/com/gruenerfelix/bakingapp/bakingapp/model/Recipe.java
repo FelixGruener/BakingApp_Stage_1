@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.Parcelable.Creator;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class BakingProcess implements Parcelable {
+public class Recipe implements Parcelable {
 
     @SerializedName("id")
     @Expose
@@ -30,7 +30,7 @@ public class BakingProcess implements Parcelable {
     @Expose
     private String image;
 
-    public BakingProcess(Integer id, String name, Integer servings, String image) {
+    public Recipe(Integer id, String name, Integer servings, String image) {
         this.id = id;
         this.name = name;
         this.servings = servings;
@@ -100,10 +100,10 @@ public class BakingProcess implements Parcelable {
         dest.writeString(this.image);
     }
 
-    public BakingProcess() {
+    public Recipe() {
     }
 
-    protected BakingProcess(Parcel in) {
+    protected Recipe(Parcel in) {
         this.id = (Integer) in.readValue(Integer.class.getClassLoader());
         this.name = in.readString();
         this.ingredients = new ArrayList<Ingredient>();
@@ -114,15 +114,15 @@ public class BakingProcess implements Parcelable {
         this.image = in.readString();
     }
 
-    public static final Parcelable.Creator<BakingProcess> CREATOR = new Parcelable.Creator<BakingProcess>() {
+    public static final Parcelable.Creator<Recipe> CREATOR = new Parcelable.Creator<Recipe>() {
         @Override
-        public BakingProcess createFromParcel(Parcel source) {
-            return new BakingProcess(source);
+        public Recipe createFromParcel(Parcel source) {
+            return new Recipe(source);
         }
 
         @Override
-        public BakingProcess[] newArray(int size) {
-            return new BakingProcess[size];
+        public Recipe[] newArray(int size) {
+            return new Recipe[size];
         }
     };
 }
