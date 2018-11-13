@@ -48,17 +48,10 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-<<<<<<< HEAD
     public static final String EXTRA_RECIPE = "extra_recipe";
     private static final String EXTRA_RECIPE_LIST = "extra_recipes_list";
     private List<Recipe> recipes = new ArrayList<>();
     private ArrayList<Recipe> recipesInstance = new ArrayList<>();
-=======
-    private List<Recipe> baking = new ArrayList<>();
-    private Integer recipeId;
-
->>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
-
     @BindView(R.id.recycler_view)
     RecyclerView recycler_view;
 
@@ -93,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             initViews();
 
-<<<<<<< HEAD
             //For testing the recipe collection sorting alphabetically
             TestAdapter testAdapter = new TestAdapter(LayoutInflater.from(this));
             recycler_view.setAdapter(testAdapter);
