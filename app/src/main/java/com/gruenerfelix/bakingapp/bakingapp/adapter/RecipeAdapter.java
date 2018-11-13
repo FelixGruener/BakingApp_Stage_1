@@ -12,18 +12,23 @@ import android.widget.Toast;
 
 import com.gruenerfelix.bakingapp.bakingapp.R;
 import com.gruenerfelix.bakingapp.bakingapp.RecipeDetailActivity;
-import com.gruenerfelix.bakingapp.bakingapp.model.BakingProcess;
+import com.gruenerfelix.bakingapp.bakingapp.model.Recipe;
+import com.gruenerfelix.bakingapp.bakingapp.utils.PreferenceUtil;
+import com.gruenerfelix.bakingapp.bakingapp.widget.RecipeWidgetProvider;
+import com.gruenerfelix.bakingapp.bakingapp.widget.RecipeWidgetService;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.gruenerfelix.bakingapp.bakingapp.MainActivity.EXTRA_RECIPE;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHolder> {
 
     //Refererence to MainActivity
     private Context mContext;
-    private List<BakingProcess> recipeList = new ArrayList<>();
+    private List<Recipe> recipeList = new ArrayList<>();
 
-    public RecipeAdapter(Context mContext, List<BakingProcess> recipeList) {
+    public RecipeAdapter(Context mContext, List<Recipe> recipeList) {
         this.recipeList = recipeList;
         this.mContext = mContext;
     }
@@ -41,11 +46,19 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
     //Binds Data to that Card
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        BakingProcess recipe = recipeList.get(position);
+        Recipe recipe = recipeList.get(position);
         holder.title.setText(recipe.getName());
 
     }
 
+    public void swapData(List<Recipe> recipes) {
+        this.recipeList = recipes;
+        notifyDataSetChanged();
+    }
+
+    public List<Recipe> getData() {
+        return recipeList;
+    }
 
     @Override
     public int getItemCount(){
@@ -63,19 +76,21 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
             title = (TextView) view.findViewById(R.id.item_title);
             image = (ImageView) view.findViewById(R.id.recipeImage);
 
-            view.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    int pos = getAdapterPosition();
-                    if (pos != RecyclerView.NO_POSITION){
-                        BakingProcess clickedDataItem = recipeList.get(pos);
+            view.setOnClickListener(v -> {
+                int pos = getAdapterPosition();
+                if (pos != RecyclerView.NO_POSITION){
+                    Recipe clickedDataItem = recipeList.get(pos);
 
-                        Intent intent = new Intent(mContext, RecipeDetailActivity.class);
-                        intent.putExtra("Recipe", clickedDataItem);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        mContext.startActivity(intent);
-                        Toast.makeText(v.getContext(), "You clicked " + clickedDataItem.getName(), Toast.LENGTH_SHORT).show();
-                    }
+                    Intent intent = new Intent(mContext, RecipeDetailActivity.class);
+                    intent.putExtra(EXTRA_RECIPE, clickedDataItem);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                    PreferenceUtil.setSelectedRecipeId(mContext, clickedDataItem.getId());
+                    PreferenceUtil.setSelectedRecipeName(mContext, clickedDataItem.getName());
+                    RecipeWidgetService.startActionUpdateWidgets(mContext);
+
+                    mContext.startActivity(intent);
+                    Toast.makeText(v.getContext(), "You clicked " + clickedDataItem.getName(), Toast.LENGTH_SHORT).show();
                 }
             });
         }

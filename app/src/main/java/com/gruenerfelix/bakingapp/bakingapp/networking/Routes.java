@@ -1,4 +1,4 @@
-package networking;
+package com.gruenerfelix.bakingapp.bakingapp.networking;
 
 public interface Routes {
 

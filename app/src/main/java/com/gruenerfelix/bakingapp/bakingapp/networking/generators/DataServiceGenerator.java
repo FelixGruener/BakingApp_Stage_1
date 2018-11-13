@@ -1,4 +1,4 @@
-package networking.generators;
+package com.gruenerfelix.bakingapp.bakingapp.networking.generators;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -7,7 +7,7 @@ import com.gruenerfelix.bakingapp.bakingapp.BuildConfig;
 import java.text.DateFormat;
 import java.util.concurrent.TimeUnit;
 
-import networking.Routes;
+import com.gruenerfelix.bakingapp.bakingapp.networking.Routes;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
