@@ -6,7 +6,10 @@ import android.os.AsyncTask;
 import com.firebase.jobdispatcher.JobParameters;
 import com.firebase.jobdispatcher.JobService;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 public class RecipeJobService extends JobService {
 
     private AsyncTask<Void, Void, Void> mFetchRecipeTask;

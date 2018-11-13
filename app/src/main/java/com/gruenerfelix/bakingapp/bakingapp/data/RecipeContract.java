@@ -1,13 +1,21 @@
 package com.gruenerfelix.bakingapp.bakingapp.data;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 import net.simonvt.schematic.annotation.AutoIncrement;
 import net.simonvt.schematic.annotation.ConflictResolutionType;
 import net.simonvt.schematic.annotation.DataType;
 import net.simonvt.schematic.annotation.NotNull;
 import net.simonvt.schematic.annotation.PrimaryKey;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 public class RecipeContract {
 
     public static final class IngredientEntry {

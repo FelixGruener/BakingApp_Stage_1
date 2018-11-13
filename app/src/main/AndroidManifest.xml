@@ -25,6 +25,12 @@
         </activity>
         <activity
             android:name=".RecipeStepActivity"/>
+<<<<<<< HEAD
+=======
+        <service
+            android:name=".widget.RecipeWidgetIntentService"
+            android:exported="false" />
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 
         <service
             android:name=".sync.RecipeIntentService"
@@ -43,6 +49,13 @@
             android:name="com.gruenerfelix.bakingapp.bakingapp.data.generated.RecipeProvider"
             android:exported="true"/>
 
+<<<<<<< HEAD
+=======
+        <service
+            android:name=".widget.ListWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
         <receiver android:name=".widget.RecipeWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -52,6 +65,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/recipe_widget_provider_info" />
         </receiver>
+<<<<<<< HEAD
 
         <service android:name=".widget.RecipeWidgetService" />
 
@@ -64,6 +78,8 @@
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
 
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
     </application>
 
 </manifest>

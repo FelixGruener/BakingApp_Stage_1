@@ -12,11 +12,23 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+<<<<<<< HEAD
 import android.view.LayoutInflater;
 
 import com.gruenerfelix.bakingapp.bakingapp.adapter.RecipeAdapter;
 import com.gruenerfelix.bakingapp.bakingapp.adapter.TestAdapter;
 import com.gruenerfelix.bakingapp.bakingapp.model.Recipe;
+=======
+
+import com.google.gson.Gson;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonSyntaxException;
+import com.gruenerfelix.bakingapp.bakingapp.adapter.RecipeAdapter;
+import com.gruenerfelix.bakingapp.bakingapp.model.Recipe;
+import com.gruenerfelix.bakingapp.bakingapp.model.Ingredient;
+import com.gruenerfelix.bakingapp.bakingapp.model.Step;
+import com.gruenerfelix.bakingapp.bakingapp.sync.RecipeSyncUtils;
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,10 +48,16 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+<<<<<<< HEAD
     public static final String EXTRA_RECIPE = "extra_recipe";
     private static final String EXTRA_RECIPE_LIST = "extra_recipes_list";
     private List<Recipe> recipes = new ArrayList<>();
     private ArrayList<Recipe> recipesInstance = new ArrayList<>();
+=======
+    private List<Recipe> baking = new ArrayList<>();
+    private Integer recipeId;
+
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 
     @BindView(R.id.recycler_view)
     RecyclerView recycler_view;
@@ -75,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             initViews();
 
+<<<<<<< HEAD
             //For testing the recipe collection sorting alphabetically
             TestAdapter testAdapter = new TestAdapter(LayoutInflater.from(this));
             recycler_view.setAdapter(testAdapter);
@@ -91,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayData(){
         recipeAdapter = new RecipeAdapter(this, recipesInstance);
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
         if (isTablet(this)) {
 
             recycler_view.setLayoutManager(new GridLayoutManager(this, 3));
@@ -100,9 +121,15 @@ public class MainActivity extends AppCompatActivity {
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
             recycler_view.setLayoutManager(layoutManager);
         }
+<<<<<<< HEAD
         recycler_view.setItemAnimator(new DefaultItemAnimator());
         recycler_view.setAdapter(recipeAdapter);
         recipeAdapter.notifyDataSetChanged();
+=======
+
+        RecipeSyncUtils.initialize(this);
+        loadData();
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
     }
 
 
@@ -122,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadData() {
+
         Service service = DataServiceGenerator.createService(Service.class);
         Call<List<Recipe>> call = service.fetchData();
 
@@ -131,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
 
                     if (response.body() != null) {
+<<<<<<< HEAD
                         recipes = response.body();
                         recipesInstance.clear();
                         recipesInstance.addAll(recipes);
@@ -139,6 +168,11 @@ public class MainActivity extends AppCompatActivity {
 
                         //sorting recipe in alphabetical order which UI test was done upon
                         Collections.sort(recipes, Recipe.BY_NAME_ALPHABETICAL);
+=======
+                        List<Recipe> bakingProcesses = response.body();
+                        recycler_view.setItemAnimator(new DefaultItemAnimator());
+                        recycler_view.setAdapter(new RecipeAdapter(getApplicationContext(), bakingProcesses));
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
                     }
                 }
             }
@@ -149,6 +183,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+<<<<<<< HEAD
+=======
+
+    private static <T> List<T> getListFromJson(String jsonString, Type type) {
+        if (!isValid(jsonString)) {
+            return null;
+        }
+        return new Gson().fromJson(jsonString, type);
+    }
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

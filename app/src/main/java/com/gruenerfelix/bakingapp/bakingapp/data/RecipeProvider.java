@@ -7,13 +7,17 @@ import net.simonvt.schematic.annotation.ContentUri;
 import net.simonvt.schematic.annotation.InexactContentUri;
 import net.simonvt.schematic.annotation.TableEndpoint;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 @ContentProvider(
         authority = RecipeProvider.AUTHORITY,
         database = RecipeDatabase.class)
 public class RecipeProvider {
     public static final String AUTHORITY = "com.gruenerfelix.bakingapp.bakingapp.provider";
 
+<<<<<<< HEAD
     static final Uri BASE_CONTENT_URI = Uri.parse("content://" + AUTHORITY);
 
     interface Path {
@@ -30,6 +34,8 @@ public class RecipeProvider {
         return builder.build();
     }
 
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
     @TableEndpoint(table = RecipeDatabase.RECIPE_INGREDIENTS)
     public static class RecipeIngredients {
 
@@ -91,5 +97,9 @@ public class RecipeProvider {
             return Uri.parse("content://" + AUTHORITY + "/recipes/" + id);
         }
     }
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822

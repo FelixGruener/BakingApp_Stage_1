@@ -2,6 +2,7 @@
     <string name="app_name">BakingApp</string>
     <string name="empty_widget_list" >No Ingredient Information Available</string>
     <string name="ingredients_title_text"> Ingredients</string>
+<<<<<<< HEAD
     <string name="sample_step_count">Step 1</string>
     <string name="ingredient_of">Ingredients of %1$s</string>
     <string name="recipes">Recipes</string>
@@ -11,4 +12,6 @@
     <string name="description">Description</string>
     <string name="prev">Prev</string>
     <string name="next">Next</string>
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 </resources>

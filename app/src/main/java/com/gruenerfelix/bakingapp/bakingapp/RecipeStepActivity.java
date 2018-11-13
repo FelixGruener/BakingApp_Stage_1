@@ -1,5 +1,6 @@
 package com.gruenerfelix.bakingapp.bakingapp;
 
+<<<<<<< HEAD
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -7,10 +8,15 @@ import android.os.Parcelable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+=======
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.gruenerfelix.bakingapp.bakingapp.fragment.RecipeStepFragment;
+<<<<<<< HEAD
 import com.gruenerfelix.bakingapp.bakingapp.model.Step;
 
 import java.util.ArrayList;
@@ -26,10 +32,15 @@ public class RecipeStepActivity extends AppCompatActivity
     private int listIndex;
     private List<Step> steps;
     private String recipeName;
+=======
+
+public class RecipeStepActivity extends AppCompatActivity {
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
 
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -118,5 +129,22 @@ public class RecipeStepActivity extends AppCompatActivity
         fragmentManager.beginTransaction()
                 .replace(R.id.recipe_step_content_view, recipeStepFragment)
                 .commit();
+=======
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        setContentView(R.layout.recipe_step);
+
+        if (savedInstanceState == null) {
+            Bundle arguments = new Bundle();
+            arguments.putParcelable("Steps", getIntent().getParcelableExtra("Steps") );
+
+            RecipeStepFragment fragment = new RecipeStepFragment();
+            fragment.setArguments(arguments);
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.item_detail_container, fragment)
+                    .commit();
+        }
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
     }
 }

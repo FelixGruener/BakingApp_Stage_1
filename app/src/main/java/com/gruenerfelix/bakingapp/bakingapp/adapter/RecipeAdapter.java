@@ -8,14 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.gruenerfelix.bakingapp.bakingapp.R;
 import com.gruenerfelix.bakingapp.bakingapp.RecipeDetailActivity;
 import com.gruenerfelix.bakingapp.bakingapp.model.Recipe;
+<<<<<<< HEAD
 import com.gruenerfelix.bakingapp.bakingapp.utils.PreferenceUtil;
 import com.gruenerfelix.bakingapp.bakingapp.widget.RecipeWidgetProvider;
 import com.gruenerfelix.bakingapp.bakingapp.widget.RecipeWidgetService;
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +44,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
         return new MyViewHolder(view);
     }
 
-
     //Binds Data to that Card
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
@@ -51,6 +52,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
 
     }
 
+<<<<<<< HEAD
     public void swapData(List<Recipe> recipes) {
         this.recipeList = recipes;
         notifyDataSetChanged();
@@ -60,11 +62,14 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
         return recipeList;
     }
 
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
     @Override
     public int getItemCount(){
         return recipeList.size();
 
     }
+
     //inner class of RecyclerView. Adapter
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView title;
@@ -76,6 +81,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
             title = (TextView) view.findViewById(R.id.item_title);
             image = (ImageView) view.findViewById(R.id.recipeImage);
 
+<<<<<<< HEAD
             view.setOnClickListener(v -> {
                 int pos = getAdapterPosition();
                 if (pos != RecyclerView.NO_POSITION){
@@ -91,6 +97,21 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
 
                     mContext.startActivity(intent);
                     Toast.makeText(v.getContext(), "You clicked " + clickedDataItem.getName(), Toast.LENGTH_SHORT).show();
+=======
+            view.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    int pos = getAdapterPosition();
+                    if (pos != RecyclerView.NO_POSITION){
+                        Recipe clickedDataItem = recipeList.get(pos);
+
+                        Intent intent = new Intent(mContext, RecipeDetailActivity.class);
+                        intent.putExtra("Recipe", clickedDataItem);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        mContext.startActivity(intent);
+
+                    }
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
                 }
             });
         }

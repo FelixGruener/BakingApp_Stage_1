@@ -5,9 +5,12 @@
     <dimen name="item_width">200dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
+<<<<<<< HEAD
     <item name="low_speed" type="dimen" format="float">120</item>
     <item name="normal_speed" type="dimen" format="float">100</item>
 
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
     <dimen name="widget_margin">8dp</dimen>
     <dimen name="widget_header_padding">8dp</dimen>
     <dimen name="widget_title_min_height">50dp</dimen>
@@ -26,6 +29,7 @@
     <dimen name="margin_padding_large">12dp</dimen>
     <dimen name="margin_padding_zero">0dp</dimen>
     <dimen name="margin_padding_one_dp">1dp</dimen>
+<<<<<<< HEAD
     <dimen name="margin_8dp">8dp</dimen>
     <dimen name="secondary_text_size">18sp</dimen>
     <dimen name="ingredient_icon_size">32dp</dimen>
@@ -40,3 +44,8 @@
     <dimen name="poster_height">275dp</dimen>
 
 </resources>
+=======
+    <item name="low_speed" type="dimen" format="float">120</item>
+    <item name="normal_speed" type="dimen" format="float">100</item>
+</resources>
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822

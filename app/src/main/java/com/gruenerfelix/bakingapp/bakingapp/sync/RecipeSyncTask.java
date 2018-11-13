@@ -10,11 +10,17 @@ import com.gruenerfelix.bakingapp.bakingapp.model.RecipeContentValues;
 import com.gruenerfelix.bakingapp.bakingapp.utils.JsonUtils;
 import com.gruenerfelix.bakingapp.bakingapp.utils.NetworkUtils;
 
+<<<<<<< HEAD
 
 import java.lang.reflect.Type;
 import java.util.List;
 
 
+=======
+import java.lang.reflect.Type;
+import java.util.List;
+
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 public class RecipeSyncTask {
 
     synchronized public static void syncRecipe(Context context) {
@@ -39,7 +45,10 @@ public class RecipeSyncTask {
                         RecipeProvider.Recipes.CONTENT_URI,
                         null,
                         null);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
                 recipeContentResolver.delete(
                         RecipeProvider.RecipeIngredients.CONTENT_URI,
                         null,
@@ -48,7 +57,10 @@ public class RecipeSyncTask {
                         RecipeProvider.RecipeSteps.CONTENT_URI,
                         null,
                         null);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
                 recipeContentResolver.bulkInsert(
                         RecipeProvider.Recipes.CONTENT_URI,
                         values.getRecipes());

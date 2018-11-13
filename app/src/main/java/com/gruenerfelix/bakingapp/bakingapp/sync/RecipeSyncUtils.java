@@ -15,10 +15,15 @@ import com.firebase.jobdispatcher.Trigger;
 import com.gruenerfelix.bakingapp.bakingapp.data.RecipeContract;
 import com.gruenerfelix.bakingapp.bakingapp.data.RecipeProvider;
 
+<<<<<<< HEAD
 
 import java.util.concurrent.TimeUnit;
 
 
+=======
+import java.util.concurrent.TimeUnit;
+
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 public class RecipeSyncUtils {
     private static final int SYNC_INTERVAL_HOURS = 24;
     private static final int SYNC_INTERVAL_SECONDS = (int) TimeUnit.HOURS.toSeconds(SYNC_INTERVAL_HOURS);

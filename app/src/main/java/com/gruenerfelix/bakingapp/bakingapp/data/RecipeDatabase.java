@@ -3,7 +3,10 @@ package com.gruenerfelix.bakingapp.bakingapp.data;
 import net.simonvt.schematic.annotation.Database;
 import net.simonvt.schematic.annotation.Table;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 @Database(version = RecipeDatabase.VERSION)
 public class RecipeDatabase {
 

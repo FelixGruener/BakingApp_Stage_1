@@ -2,9 +2,20 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:initialKeyguardLayout="@layout/recipe_widget_provider"
     android:initialLayout="@layout/recipe_widget_provider"
+<<<<<<< HEAD
     android:minHeight="200dp"
     android:minWidth="200dp"
     android:previewImage="@mipmap/ic_launcher"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="1800000"
     android:widgetCategory="home_screen" />
+=======
+    android:minHeight="@dimen/widget_ingredient_default_height"
+    android:minResizeHeight="@dimen/widget_ingredient_default_height"
+    android:minResizeWidth="@dimen/widget_ingredient_width"
+    android:minWidth="@dimen/widget_ingredient_width"
+    android:previewImage="@mipmap/ic_launcher"
+    android:resizeMode="horizontal|vertical"
+    android:updatePeriodMillis="1800000"
+    android:widgetCategory="home_screen"></appwidget-provider>
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822

@@ -1,18 +1,29 @@
 package com.gruenerfelix.bakingapp.bakingapp.utils;
 
+<<<<<<< HEAD
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+=======
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 import com.gruenerfelix.bakingapp.bakingapp.data.RecipeContract;
 import com.gruenerfelix.bakingapp.bakingapp.data.RecipeProvider;
+<<<<<<< HEAD
 import com.gruenerfelix.bakingapp.bakingapp.model.Recipe;
 import com.gruenerfelix.bakingapp.bakingapp.model.Ingredient;
+=======
+import com.gruenerfelix.bakingapp.bakingapp.model.Ingredient;
+import com.gruenerfelix.bakingapp.bakingapp.model.Recipe;
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
 import com.gruenerfelix.bakingapp.bakingapp.model.RecipeContentValues;
 import com.gruenerfelix.bakingapp.bakingapp.model.Step;
 
@@ -200,4 +211,7 @@ public final class JsonUtils {
         return ingredients;
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4761b06e83e82ee85094daacc52f1e627f37e822
